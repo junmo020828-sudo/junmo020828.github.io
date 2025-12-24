@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CTBU 剧组协作群｜长期招募</title>
+  <meta name="description" content="学生原创短片剧组协作群：摄影/灯光/场记/制片/道具/群演。长期、不定期招募，1–2周一期项目，包饭，学习全流程。" />
+  <link rel="icon" href="favicon.png" />
+  <style>
+    :root{
+      --bg:#0b0c10;
+      --card:#11131a;
+      --card2:#0f1117;
+      --text:#f5f7ff;
+      --muted:rgba(245,247,255,.72);
+      --line:rgba(255,255,255,.12);
+      --accent:#9bffb0;
+      --accent2:#8ab4ff;
+      --warn:#ffd38a;
+      --shadow: 0 18px 50px rgba(0,0,0,.55);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1080px;
+      --font: ui-sans-serif, system-ui, -apple-system, "PingFang SC", "Microsoft Yahei", "Noto Sans SC", "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 800px at 10% -10%, rgba(138,180,255,.25), transparent 60%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(155,255,176,.20), transparent 60%),
+                  radial-gradient(800px 700px at 40% 120%, rgba(255,211,138,.14), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      font-family:var(--font);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 88px;}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:10px 0 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px; background:linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 0 0 6px rgba(155,255,176,.10);
+    }
+    .pill{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      padding:8px 12px; border-radius:999px;
+      font-size:13px; color:var(--muted);
+      display:flex; gap:8px; align-items:center;
+    }
+    .hero{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:16px;
+      align-items:stretch;
+    }
+    @media (max-width: 920px){
+      .hero{grid-template-columns: 1fr; }
+    }
+    .card{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius:var(--radius2);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .heroMain{padding:24px 22px 18px;}
+    h1{
+      margin:0 0 10px;
+      font-size:34px;
+      line-height:1.15;
+      letter-spacing:.2px;
+    }
+    @media (max-width: 520px){ h1{font-size:28px;} }
+    .sub{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:15px;
+    }
+    .kpis{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 18px;}
+    .kpi{
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.20);
+      font-size:13px;
+      color:var(--muted);
+      display:flex; gap:8px; align-items:center;
+    }
+    .kpi b{color:var(--text); font-weight:700}
+    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+      cursor:pointer;
+      transition:transform .12s ease, background .12s ease;
+      user-select:none;
+    }
+    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.10);}
+    .btn.primary{
+      background:linear-gradient(135deg, rgba(155,255,176,.18), rgba(138,180,255,.14));
+      border-color:rgba(155,255,176,.35);
+    }
+    .heroSide{display:flex; flex-direction:column;}
+    .qrBlock{
+      padding:18px 16px 16px;
+      height:100%;
+      display:flex; flex-direction:column; gap:12px;
+    }
+    .qr{
+      width:100%;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      overflow:hidden;
+    }
+    .qr img{display:block; width:100%; height:auto;}
+    .qrHint{
+      font-size:13px; color:var(--muted);
+      display:flex; gap:8px; align-items:flex-start;
+    }
+    .qrHint strong{color:var(--text)}
+    .grid{
+      margin-top:16px;
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width: 920px){ .grid{grid-template-columns:1fr; } }
+    .section{padding:18px 18px 16px;}
+    .section h2{
+      margin:0 0 8px;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
+    .list{margin:0; padding-left:18px; color:var(--muted); font-size:14px;}
+    .list li{margin:6px 0;}
+    .tagRow{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;}
+    .tag{
+      font-size:12px; color:var(--muted);
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      padding:7px 10px; border-radius:999px;
+    }
+    .note{
+      margin-top:10px;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px dashed rgba(255,255,255,.22);
+      background:rgba(0,0,0,.16);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .gallery{
+      margin-top:16px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:var(--radius2);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .galleryHead{
+      padding:14px 16px;
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      border-bottom:1px solid var(--line);
+    }
+    .galleryHead h2{margin:0; font-size:16px;}
+    .galleryHead .muted{color:var(--muted); font-size:13px;}
+    .masonry{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:0;
+    }
+    @media (max-width: 920px){ .masonry{grid-template-columns:1fr;} }
+    .col{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:0;
+    }
+    .ph{
+      position:relative;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      overflow:hidden;
+      background:#000;
+    }
+    .ph img{
+      width:100%; height:100%;
+      display:block;
+      object-fit:cover;
+      transform:scale(1.02);
+      filter:saturate(1.03) contrast(1.03);
+    }
+    .ph .cap{
+      position:absolute; left:12px; bottom:10px;
+      font-size:12px;
+      padding:7px 10px;
+      border-radius:999px;
+      background:rgba(0,0,0,.45);
+      border:1px solid rgba(255,255,255,.18);
+      backdrop-filter: blur(8px);
+      color:rgba(255,255,255,.90);
+    }
+    .footer{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:12px;
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      opacity:.9;
+    }
+    .stickyQR{
+      position:fixed;
+      right:16px; bottom:16px;
+      width:104px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(17,19,26,.74);
+      backdrop-filter: blur(10px);
+      box-shadow:0 14px 40px rgba(0,0,0,.55);
+      overflow:hidden;
+      z-index:50;
+      display:none;
+    }
+    .stickyQR img{display:block; width:100%; height:auto;}
+    .stickyQR .sText{
+      padding:8px 8px 9px;
+      font-size:11px;
+      color:rgba(245,247,255,.78);
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,.12);
+    }
+    @media (max-width: 920px){ .stickyQR{display:block;} }
+    .smallPrint{color:rgba(245,247,255,.62); font-size:12px; margin-top:6px;}
+    .sep{height:1px; background:rgba(255,255,255,.10); margin:14px 0 10px;}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <div>CTBU 剧组协作群</div>
+      </div>
+      <div class="pill" title="长期、不定期招募">
+        <span>🎬</span><span>1–2 周一期项目</span>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="card heroMain">
+        <h1>学生原创短片剧组｜长期协助招募</h1>
+        <p class="sub">
+          我们是学生自发组成的剧情短片团队，抖音账号粉丝 <b>1.6 万+</b>，有多条高播放作品。
+          不是一次性招人，而是长期、不定期招募：让想拍的人能找到人，让想学的人能跟进项目。
+        </p>
+
+        <div class="kpis">
+          <div class="kpi"><span>👥</span><b>大一/大二/大三</b><span>优先</span></div>
+          <div class="kpi"><span>🧭</span><b>全流程</b><span>学习</span></div>
+          <div class="kpi"><span>🗓️</span><b>3–4 天周期</b><span>可参与</span></div>
+          <div class="kpi"><span>🍚</span><b>包饭</b><span>餐食</span></div>
+        </div>
+
+        <div class="sep"></div>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="#join">📲 进群报名（扫码）</a>
+          <button class="btn" id="copyText">📋 复制招募文案</button>
+          <a class="btn" href="#rules">✅ 看清规则再来</a>
+        </div>
+        <div class="smallPrint">提示：确认参与=按约定时间完整跟组，<b>不接受随来随走</b>。</div>
+      </div>
+
+      <div class="card heroSide" id="join">
+        <div class="qrBlock">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px;">
+            <div>
+              <div style="font-weight:800; font-size:16px;">扫码进群</div>
+              <div class="smallPrint">群名：<span class="mono">ctbu 剧组招募群</span></div>
+            </div>
+            <div class="pill" style="padding:6px 10px; font-size:12px;">
+              <span>🔒</span><span>二维码可能有时效</span>
+            </div>
+          </div>
+          <div class="qr"><img src="assets/qr_small.jpg" alt="进群二维码"></div>
+          <div class="qrHint">
+            <span>📌</span>
+            <div><strong>进群后</strong>请按群公告自我介绍：方向 / 空闲时间 / 是否能跟组。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid" id="rules">
+      <div class="card section">
+        <h2>我们需要你（岗位）</h2>
+        <ul class="list">
+          <li>摄影 / 摄影助理</li>
+          <li>灯光 / 灯光助理（周末也可）</li>
+          <li>场记 / 现场制片（执行协助）</li>
+          <li>道具 / 群演（以现场协助为主）</li>
+        </ul>
+        <div class="tagRow">
+          <span class="tag">不要求经验</span>
+          <span class="tag">但要认真</span>
+          <span class="tag">能沟通</span>
+          <span class="tag">能配合现场</span>
+        </div>
+      </div>
+
+      <div class="card section">
+        <h2>项目节奏（大概）</h2>
+        <ul class="list">
+          <li>基本：1–2 周一个项目</li>
+          <li>每个项目：3–4 天周期</li>
+          <li>勘景 1 天 / 前期准备 2 天</li>
+          <li>拍摄 2 天 / 后期 2 天（视项目调整）</li>
+        </ul>
+        <div class="note">你可以只参与某一天，但要 <b>提前确认</b>，当天 <b>完整跟组</b>。</div>
+      </div>
+
+      <div class="card section">
+        <h2>你能学到什么</h2>
+        <ul class="list">
+          <li>前期策划：剧本 / 分镜头脚本 / 勘景</li>
+          <li>拍摄现场：机位 / 运镜 / 灯光思路</li>
+          <li>后期：剪辑 / 调色 / 节奏与情绪</li>
+        </ul>
+        <div class="note">后续项目优先继续合作：想长期成长，就别只来“看热闹”。</div>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <div class="galleryHead">
+        <h2>现场与作品（部分截图）</h2>
+        <div class="muted">真实拍摄 · 真实剪辑 · 真实成长</div>
+      </div>
+
+      <div class="masonry">
+        <div class="col">
+          <div class="ph" style="height:360px;">
+            <img src="assets/bts3.jpg" alt="现场">
+            <div class="cap">现场 · 协作</div>
+          </div>
+          <div class="ph" style="height:320px;">
+            <img src="assets/bts1.jpg" alt="现场">
+            <div class="cap">现场 · 摄影/收音</div>
+          </div>
+          <div class="ph" style="height:300px;">
+            <img src="assets/gear.jpg" alt="设备">
+            <div class="cap">设备 · 灯光/机位</div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="ph" style="height:280px;">
+            <img src="assets/douyin1.jpg" alt="作品">
+            <div class="cap">作品 · 账号展示</div>
+          </div>
+          <div class="ph" style="height:280px;">
+            <img src="assets/douyin2.jpg" alt="作品">
+            <div class="cap">作品 · 账号展示</div>
+          </div>
+          <div class="ph" style="height:250px;">
+            <img src="assets/resolve.jpg" alt="调色">
+            <div class="cap">后期 · 调色</div>
+          </div>
+          <div class="ph" style="height:250px;">
+            <img src="assets/pr.jpg" alt="剪辑">
+            <div class="cap">后期 · 剪辑</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>© CTBU 学生剧组协作群 · 真实项目 · 真实成长</div>
+      <div>建议用手机打开：右下角悬浮二维码可随时扫码</div>
+    </div>
+  </div>
+
+  <div class="stickyQR" onclick="document.getElementById('join').scrollIntoView({behavior:'smooth'})" title="点我回到二维码区域">
+    <img src="assets/qr_small.jpg" alt="二维码">
+    <div class="sText">扫码进群</div>
+  </div>
+
+  <script>
+    const copyBtn = document.getElementById('copyText');
+    const copyText = `学生原创短片剧组｜长期协助招募（大一大二大三）
+
+我们是学生自发组成的剧情短片团队，抖音账号粉丝 1.6 万+，有多条高播放作品。
+基本保持 1–2 周一个项目，每个项目 3–4 天周期，全流程（勘景/前期/拍摄/后期）。
+
+不是一次性招人，而是长期、不定期招募。
+
+我们需要你：
+- 摄影 / 灯光 / 场记 / 制片 / 道具 / 群演 等现场协助
+- 提前确认时间，当天或项目周期内完整跟组（不接受随来随走）
+
+你能得到的：
+- 参与完整短片流程：策划/剧本/分镜/拍摄灯光/剪辑调色
+- 后续项目优先继续合作
+
+需要说明：
+- 学生创作项目，暂无薪酬；拍摄期间包饭/餐食
+- 偶尔有广告植入用于维持成本；若有结余会作为补贴发放
+
+欢迎扫码进群报名：ctbu 剧组招募群`;
+    copyBtn.addEventListener('click', async () => {
+      try{
+        await navigator.clipboard.writeText(copyText);
+        copyBtn.textContent = '✅ 已复制（去群里发）';
+        setTimeout(()=>copyBtn.textContent='📋 复制招募文案', 1600);
+      }catch(e){
+        alert('复制失败：请手动选中文案复制（或使用电脑浏览器）。');
+      }
+    });
+  </script>
+</body>
+</html>
